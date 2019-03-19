@@ -46,4 +46,6 @@ testem.log
 Thumbs.db
 
 # HTML
-src/*.html
+src/**/*.html
+src/*/**/*.html
+src/**.html
