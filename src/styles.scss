@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~codemirror/lib/codemirror.css";
+@import "~codemirror/theme/material.css";
+
+
+#charts #ejercicio2 {
+  min-height: 200px;
+  background: url('assets/images/solar.jpg') center;
+  background-size: auto
+}
+
+#charts #ejercicio2 .circle {
+  padding: 0;
+  width: 50px
+}
+
+#chart-svg .bar {
+  fill: #4682b4
+}
+
+#chart-svg .bar:hover {
+  fill: brown
+}
+
+#chart-svg .axis {
+  font: 10px sans-serif
+}
+
+#chart-svg .axis line,
+#chart-svg .axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges
+}
+
+#chart-svg .x.axis path {
+  display: none
+}
+
+#ejercicio2.planetas {
+  min-height: 200px;
+  background: url('assets/images/solar.jpg') center;
+  background-size: cover
+}
+
+#ejercicio2.planetas .circle {
+  padding: 0
+}
+
+.d3-tip {
+  background: #eee;
+  padding: 5px;
+  border-radius: 5px
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #666;
+  shape-rendering: crispEdges
+}
+
+.acme-navbar-text,
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff
+}
+
+.CodeMirror {
+  height: 100%
+}
+
+.circle,
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  float: left;
+  margin: 5px
+}
+
+.square {
+  background-color: #eee
+}
+
+.circle {
+  background-color: #4682b4;
+  border-radius: 50%;
+  padding: 15px
+}

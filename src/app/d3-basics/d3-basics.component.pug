@@ -1,0 +1,205 @@
+.container
+  .row
+    .col-12
+      h1 Introducción
+      h2 Selectores
+      p
+        | D3 soporta selecciones por etiqueta
+        code ("div")
+        | , clase
+        code (".class")
+        | , identificador
+        code ("#id")
+        | , atributo
+        code ("[color=red]")
+        | , anidación
+        code ("parent child")
+        |  así como soporta operaciones
+        b AND
+        |  y
+        b OR
+        code ('.class1.class2') ('.class1, .class2')
+        |  respectivamente.
+      p
+        a(href='https://librosweb.es/libro/css/capitulo_2/selectores_basicos.html') https://librosweb.es/libro/css/capitulo_2/selectores_basicos.html
+  .row
+    .col-6
+      .panel.panel-default
+        .panel-heading
+          code Selectores ejemplo
+        .panel-body
+          pre.
+            &lt;body&gt;
+              &lt;div id="primero"&gt;
+                &lt;p&gt; Lorem ipsum dolor sit amet, &lt;a href="#"&gt; consectetuer adipiscing elit&lt;/a&gt;. Praesent blandit nibh at felis.
+                Sed nec diam in dolor vestibulum aliquet. Duis ullamcorper, nisi non facilisis molestie, &lt;em&gt; lorem sem aliquam nulla
+                &lt;/em&gt;, id lacinia velit mi vestibulum enim.&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class="normal"&gt;
+                &lt;p&gt; Phasellus eu velit sed lorem sodales egestas. Ut feugiat. &lt;span&gt; &lt;a href="#"&gt; Donec porttitor&lt;/a&gt;,
+                magna eu varius luctus,&lt;/span&gt; metus massa tristique massa, in imperdiet est velit vel magna. Phasellus erat. Duis risus.
+                &lt;a href="#"&gt; Maecenas dictum&lt;/a&gt;, nibh vitae pellentesque auctor, tellus velit consectetuer tellus, tempor pretium
+                felis tellus at metus.&lt;/p&gt;
+              &lt;div&gt;
+              &lt;div class="normal"&gt;
+                &lt;p&gt; Nam lacus orci, condimentum ut blandit vehicula, ullamcorper vitae metus. Nunc aliquet turpis non tellus aliquam,
+                sollicitudin commodo lacus ullamcorper. Quisque eget nisl elit. Cras.&lt;/p&gt;
+                &lt;input type="text"/&gt;
+              &lt;div&gt;
+            &lt;/body&gt;            
+    .col-6
+        .panel.panel-default
+          .panel-heading
+            code Selectores
+          .panel-body
+            p Selector de etiqueta:
+            p
+              code p 
+              code div 
+              code h1 
+            p Selector de clase:
+            p
+              code .destacado 
+              code .activo 
+            p Selector de identificador:
+            p
+              code #unico 
+              code #principal 
+            p Selector descendiente:
+            p
+              code p span 
+              code .normal p 
+              code div ul li 
+            p Selector multiple (OR):
+            p
+              code h1, h2, h3 
+              code .normal, .principal 
+              code #unico, #principal 
+            p Selector AND:
+            p
+              code h1.titulo 
+              code .normal.principal 
+              code #unico.normal 
+            p Selector de atributo:
+            p
+              code [color=red] 
+              code input[type="text"] 
+            p Selector del hijo en la n-ésima posición
+            p
+              code p:nth-child(2) 
+              | Devuelve el segundo párrafo que encuentra
+            p
+              code div:nth-child(3) 
+              | Devuelve el tercer div que encuentra
+  .row
+    .col-12
+      h1 Introducción a D3.js
+      h3 Selecciones y propiedades
+      a(href='https://bost.ocks.org/mike/selection', target='_blank') https://bost.ocks.org/mike/selection
+  .row
+    .col-12
+      ngx-codemirror([(ngModel)]="content[0]", [options]="{lineNumbers: true,theme: 'material', mode: 'javascript'}")
+  .row
+    .col-12
+      h4 Seleccionando un elemento del DOM y cambiando propiedades (.attr(), .style())
+    .col-12
+      #example1.panel.panel-default
+        .panel-heading
+          code #Example1
+        .panel-body
+          p Párrafo 1
+          p Párrafo 2
+    .col-12
+      // code mirror
+      hr
+    .row
+      .col-12
+        h4 Estableciendo propiedades dinámicas sobre un elemento del DOM
+      .col-12
+        #example2.panel.panel-default
+          .panel-heading
+            code #Example2
+          .panel-body
+            p Párrafo 1
+            p Párrafo 2
+      .col-12
+        // code mirror
+      .col-12
+        h4 Ejercicio 1
+        ul
+          li Selecciona los div y cambia su color de fondo (background)
+          li Selecciona el primer div y cambia el color de fuente (color)
+          li Selecciona el segundo div y aplicale la clase "circle"
+        .panel.panel-default
+          .panel-heading
+            code #ejercicio1
+          #ejercicio1.panel-body
+            .square Div 1
+            .square Div 2
+      .col-12
+        // code mirror
+    hr
+    h3
+      | Datos, el 
+      span.glyphicon.glyphicon-heart
+      |  de d3.js
+    .row
+      .col-12
+        h4 Enlazando datos con los elementos (.data())
+        a(href='https://bost.ocks.org/mike/selection/#key', target='_blank') https://bost.ocks.org/mike/selection/#key
+        .row
+          .col-12
+            img(src='assets/images/binding-data.png')
+      .col-12
+        #example3.panel.panel-default
+          .panel-heading
+            code #Example3
+          .panel-body
+            p Párrafo 1
+            p Párrafo 2
+      .col-12
+        // code mirror
+      .col-12
+        h4 Update, enter, exit
+        a(href='https://bost.ocks.org/mike/selection/#enter-update-exit', target='_blank') https://bost.ocks.org/mike/selection/#enter-update-exit
+        p Cuando se hace el enlace con los datos, existen 3 posibles subselecciones.
+        dl
+          dt Update
+          dd Resultado de los elementos del DOM que hagan match con los datos
+          dt Enter
+          dd Resultado de los datos que no tienen un elemento en el DOM
+          dt Exit
+          dd Resultado de los elementos del DOM que no tienen un dato asignado
+    hr
+    .row
+      .col-12
+        h4 Actualizando los datos
+      .col-12
+        #example4.panel.panel-default
+          .panel-heading
+            code #Example5
+          .panel-body
+            p Párrafo 1
+            p Párrafo 2
+            p Párrafo A
+            p Párrafo B
+            p Párrafo C
+            p Párrafo D
+      .col-12
+        // code mirror
+    hr
+    .row
+      .col-12
+        h4 Ejercicio 2
+        ul
+          li Crea un div por cada elemento del arreglo dado usando la subseleccion .enter()
+          li Aplica a los divs la clase "square" o "circle" para que sean visibles
+      .col-12
+        .panel.panel-default
+          .panel-heading
+            code #ejercicio2
+          #ejercicio2.panel-body
+      .col-12
+        // code mirror
+    .row
+      hr

@@ -1,0 +1,204 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Introducción</h1>
+      <h2>Selectores</h2>
+      <p>D3 soporta selecciones por etiqueta<code>("div")</code>, clase<code>(".class")</code>, identificador<code>("#id")</code>, atributo<code>("[color=red]")</code>, anidación<code>("parent child")</code> así como soporta operaciones<b>AND</b> y<b>OR</b><code>('.class1.class2') ('.class1, .class2')</code> respectivamente.</p>
+      <p><a href="https://librosweb.es/libro/css/capitulo_2/selectores_basicos.html">https://librosweb.es/libro/css/capitulo_2/selectores_basicos.html</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><code>Selectores ejemplo</code></div>
+        <div class="panel-body">
+          <pre>&lt;body&gt;
+  &lt;div id="primero"&gt;
+    &lt;p&gt; Lorem ipsum dolor sit amet, &lt;a href="#"&gt; consectetuer adipiscing elit&lt;/a&gt;. Praesent blandit nibh at felis.
+    Sed nec diam in dolor vestibulum aliquet. Duis ullamcorper, nisi non facilisis molestie, &lt;em&gt; lorem sem aliquam nulla
+    &lt;/em&gt;, id lacinia velit mi vestibulum enim.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="normal"&gt;
+    &lt;p&gt; Phasellus eu velit sed lorem sodales egestas. Ut feugiat. &lt;span&gt; &lt;a href="#"&gt; Donec porttitor&lt;/a&gt;,
+    magna eu varius luctus,&lt;/span&gt; metus massa tristique massa, in imperdiet est velit vel magna. Phasellus erat. Duis risus.
+    &lt;a href="#"&gt; Maecenas dictum&lt;/a&gt;, nibh vitae pellentesque auctor, tellus velit consectetuer tellus, tempor pretium
+    felis tellus at metus.&lt;/p&gt;
+  &lt;div&gt;
+  &lt;div class="normal"&gt;
+    &lt;p&gt; Nam lacus orci, condimentum ut blandit vehicula, ullamcorper vitae metus. Nunc aliquet turpis non tellus aliquam,
+    sollicitudin commodo lacus ullamcorper. Quisque eget nisl elit. Cras.&lt;/p&gt;
+    &lt;input type="text"/&gt;
+  &lt;div&gt;
+&lt;/body&gt;            </pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><code>Selectores</code></div>
+        <div class="panel-body">
+          <p>Selector de etiqueta:</p>
+          <p><code>p </code><code>div </code><code>h1 </code></p>
+          <p>Selector de clase:</p>
+          <p><code>.destacado </code><code>.activo </code></p>
+          <p>Selector de identificador:</p>
+          <p><code>#unico </code><code>#principal </code></p>
+          <p>Selector descendiente:</p>
+          <p><code>p span </code><code>.normal p </code><code>div ul li </code></p>
+          <p>Selector multiple (OR):</p>
+          <p><code>h1, h2, h3 </code><code>.normal, .principal </code><code>#unico, #principal </code></p>
+          <p>Selector AND:</p>
+          <p><code>h1.titulo </code><code>.normal.principal </code><code>#unico.normal </code></p>
+          <p>Selector de atributo:</p>
+          <p><code>[color=red] </code><code>input[type="text"] </code></p>
+          <p>Selector del hijo en la n-ésima posición</p>
+          <p><code>p:nth-child(2) </code>Devuelve el segundo párrafo que encuentra</p>
+          <p><code>div:nth-child(3) </code>Devuelve el tercer div que encuentra</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>Introducción a D3.js</h1>
+      <h3>Selecciones y propiedades</h3><a href="https://bost.ocks.org/mike/selection" target="_blank">https://bost.ocks.org/mike/selection</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ngx-codemirror [(ngModel)]="content[0]" [options]="{lineNumbers: true,theme: 'material', mode: 'javascript'}"></ngx-codemirror>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h4>Seleccionando un elemento del DOM y cambiando propiedades (.attr(), .style())</h4>
+    </div>
+    <div class="col-12">
+      <div class="panel panel-default" id="example1">
+        <div class="panel-heading"><code>#Example1</code></div>
+        <div class="panel-body">
+          <p>Párrafo 1</p>
+          <p>Párrafo 2</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <!-- code mirror-->
+      <hr/>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h4>Estableciendo propiedades dinámicas sobre un elemento del DOM</h4>
+      </div>
+      <div class="col-12">
+        <div class="panel panel-default" id="example2">
+          <div class="panel-heading"><code>#Example2</code></div>
+          <div class="panel-body">
+            <p>Párrafo 1</p>
+            <p>Párrafo 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <!-- code mirror-->
+      </div>
+      <div class="col-12">
+        <h4>Ejercicio 1</h4>
+        <ul>
+          <li>Selecciona los div y cambia su color de fondo (background)</li>
+          <li>Selecciona el primer div y cambia el color de fuente (color)</li>
+          <li>Selecciona el segundo div y aplicale la clase "circle"</li>
+        </ul>
+        <div class="panel panel-default">
+          <div class="panel-heading"><code>#ejercicio1</code></div>
+          <div class="panel-body" id="ejercicio1">
+            <div class="square">Div 1</div>
+            <div class="square">Div 2</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <!-- code mirror-->
+      </div>
+    </div>
+    <hr/>
+    <h3>Datos, el <span class="glyphicon glyphicon-heart"></span> de d3.js</h3>
+    <div class="row">
+      <div class="col-12">
+        <h4>Enlazando datos con los elementos (.data())</h4><a href="https://bost.ocks.org/mike/selection/#key" target="_blank">https://bost.ocks.org/mike/selection/#key</a>
+        <div class="row">
+          <div class="col-12"><img src="assets/images/binding-data.png"/></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="panel panel-default" id="example3">
+          <div class="panel-heading"><code>#Example3</code></div>
+          <div class="panel-body">
+            <p>Párrafo 1</p>
+            <p>Párrafo 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <!-- code mirror-->
+      </div>
+      <div class="col-12">
+        <h4>Update, enter, exit</h4><a href="https://bost.ocks.org/mike/selection/#enter-update-exit" target="_blank">https://bost.ocks.org/mike/selection/#enter-update-exit</a>
+        <p>Cuando se hace el enlace con los datos, existen 3 posibles subselecciones.</p>
+        <dl>
+          <dt>Update</dt>
+          <dd>Resultado de los elementos del DOM que hagan match con los datos</dd>
+          <dt>Enter</dt>
+          <dd>Resultado de los datos que no tienen un elemento en el DOM</dd>
+          <dt>Exit</dt>
+          <dd>Resultado de los elementos del DOM que no tienen un dato asignado</dd>
+        </dl>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-12">
+        <h4>Actualizando los datos</h4>
+      </div>
+      <div class="col-12">
+        <div class="panel panel-default" id="example4">
+          <div class="panel-heading"><code>#Example5</code></div>
+          <div class="panel-body">
+            <p>Párrafo 1</p>
+            <p>Párrafo 2</p>
+            <p>Párrafo A</p>
+            <p>Párrafo B</p>
+            <p>Párrafo C</p>
+            <p>Párrafo D</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <!-- code mirror-->
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-12">
+        <h4>Ejercicio 2</h4>
+        <ul>
+          <li>Crea un div por cada elemento del arreglo dado usando la subseleccion .enter()</li>
+          <li>Aplica a los divs la clase "square" o "circle" para que sean visibles</li>
+        </ul>
+      </div>
+      <div class="col-12">
+        <div class="panel panel-default">
+          <div class="panel-heading"><code>#ejercicio2</code></div>
+          <div class="panel-body" id="ejercicio2"></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <!-- code mirror-->
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+  </div>
+</div>
