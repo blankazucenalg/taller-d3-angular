@@ -75,12 +75,32 @@ export class D3BasicsComponent implements OnInit, AfterViewInit {
     //   .remove();
 
     /** Ejercicio 2 */
-    // const datos = [30, 40, 50, 80, 100];
-    // d3.selectAll('#ejercicio2 *').remove();
-    // d3.select('#ejercicio2').selectAll('div')
-    //   .data(datos) // Se hace el enlace con los datos
-    //   // Usar la subselección .enter()
-    //   // Agregar un nuevo div usando .append('div')
+
+    d3.selectAll('#ejercicio2 *').remove();
+
+    const datos = [30, 40, 50, 80, 100];
+
+    const contenedor = d3.select('#ejercicio2');
+    console.log('contenedor', contenedor);
+
+    // Todo esto va a estar sobre la referencia del contenedor
+    const seleccion = contenedor
+      .selectAll('div') // Aun no existen
+      .data(datos);
+
+    // update - lo que si hizo match
+    console.log(seleccion);
+    // seleccion
+    //  .attr()
+
+    // enter - datos que no tienen elemento, datos nuevos
+    seleccion
+       // Se hace el enlace con los datos
+        .enter()// Usar la subselección .enter()
+          .append('div') // Agregar un nuevo div usando .append('div')
+            .attr('class', 'square');
+
+    // exit() - elementos que no tienen dato, elementos viejos sobrantes
   }
 
 }
